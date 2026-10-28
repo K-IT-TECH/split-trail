@@ -2,9 +2,11 @@
 
 # SplitTrail
 
+[**Open live app →**](https://k-it-tech.github.io/split-trail/)
+
 An equal-split group expense ledger using integer paise.
 
-**Status:** Working local-first web app. Responsive, dependency-free, and ready for GitHub Pages. No backend or account system.
+**Status:** Working local-first web app. Responsive, dependency-free, and published on GitHub Pages. No backend or account system.
 
 ## Why build it?
 
@@ -20,7 +22,6 @@ Show careful business logic with exact money arithmetic and shared balances.
 - Record INR expenses paid by one member and split across everyone.
 - Calculate balances in integer paise and suggest settlement transfers.
 - Delete an expense, reset the group and export a JSON backup.
-
 - Download and restore versioned JSON backups, with validation before replacement.
 - Use the app offline after the first successful online visit (HTTPS or localhost).
 
@@ -77,7 +78,7 @@ For future releases, update the cache version in `sw.js` when changing the offli
 
 INR only, up to 20 members and 1,000 expenses, with each amount from ₹0.01 to ₹10,00,000. New expenses split across all current members. Old expenses retain a snapshot of their original participants. Remainder paise go to the first members in that snapshot. Suggested transfers settle the net balances; they are not guaranteed to use the globally fewest transfers. No payment is sent and no paid-transfer state is tracked.
 
-Sample data is fictional. Changes stay in `localStorage` in this browser, are not encrypted, and do not sync across devices. Clearing browser data removes them. Multiple tabs do not coordinate edits. Use **Your data → Download backup** to export a version 1 JSON snapshot, then choose that file under **Restore** on another device. Restore validates the app name, version, fields, ranges and record references, previews the record count, and asks before replacing local data. Back up your current data first. Focus timers restore paused. Files larger than 2 MB are rejected. **Reset demo** replaces the saved data after confirmation. Browser data is separate from the source files you upload to GitHub.
+Sample data is fictional. Changes stay in `localStorage` in this browser, are not encrypted, and do not sync across devices. Clearing browser data removes them. Multiple tabs do not coordinate edits. Use **Your data → Download backup** to export a version 1 JSON snapshot, then choose that file under **Restore** on another device. Restore validates the app name, version, fields, ranges and record references, previews the record count, and asks before replacing local data. Back up your current data first. Files larger than 2 MB are rejected. **Reset demo** replaces the saved data after confirmation. Browser data is separate from the source files you upload to GitHub.
 
 ## Next steps
 
