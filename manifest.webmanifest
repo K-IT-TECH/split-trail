@@ -1,0 +1,19 @@
+{
+  "id": "./",
+  "name": "SplitTrail",
+  "short_name": "SplitTrail",
+  "description": "An equal-split group expense ledger using integer paise.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff8f1",
+  "theme_color": "#fff8f1",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
