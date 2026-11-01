@@ -1,8 +1,7 @@
 "use strict";
 const KEY='kavin-split-trail-v1',E=UI.escape;
 const seed={members:[{id:'m1',name:'Alex'},{id:'m2',name:'Sam'},{id:'m3',name:'Taylor'}],expenses:[{id:'x1',title:'Train tickets',paise:180000,payer:'m1',participants:['m1','m2','m3'],date:UI.today()},{id:'x2',title:'Lunch by the lake',paise:90000,payer:'m2',participants:['m1','m2','m3'],date:UI.today()},{id:'x3',title:'Snacks for the trail',paise:30000,payer:'m3',participants:['m1','m2','m3'],date:UI.today()}]};
-function validState(s){return s&&Array.isArray(s.members)&&s.members.every(m=>m&&typeof m.id==='string'&&typeof m.name==='string')&&Array.isArray(s.expenses)&&s.expenses.every(e=>e&&Number.isSafeInteger(e.paise)&&e.paise>0&&s.members.some(m=>m.id===e.payer)&&Array.isArray(e.participants)&&e.participants.length>0&&new Set(e.participants).size===e.participants.length&&e.participants.every(id=>s.members.some(m=>m.id===id)));}
-let state=UI.load(KEY,seed,validState);
+let state=UI.load(KEY,seed,data=>DataSchema.valid('split-trail',data));
 const money=paise=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',minimumFractionDigits:2}).format(paise/100);
 const memberName=id=>state.members.find(m=>m.id===id)?.name||'Unknown member';
 // Parse decimal text directly into integer paise: avoid floating-point multiplication.
